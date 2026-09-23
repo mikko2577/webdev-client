@@ -14,6 +14,28 @@ export default function HeadingTags() {
       h6. Tag h1 is the largest heading and h6 is the smallest heading. A{" "}
       <span id="wd-inline-span">span</span> sits in this sentence without
       starting a new line.
+      <div id="wd-Jiachan-heading">
+        <h4>Jiachan Li</h4>
+        I came to the United State since 2024 spring, and I like the life style here.
+        I want to become an <span id="wd-jiachan-heanding"> software engineer </span> in after I graduate.
+      </div>
+      <div>
+        <h1></h1>
+        <h2></h2> 
+        <h3></h3>
+        <h4></h4>
+        <h5></h5>
+        <h6></h6>
+      </div>
+      <div id="wd-ai-headings">
+        <h4>Lab notes</h4>
+        This section collects short notes about the work done in this lab.
+        <h5>What I built</h5>
+        A small page that demonstrates the six heading levels and a few inline
+        elements.
+        <h6>Next step</h6>
+        Review the remaining tags and add examples for lists and links.
+      </div>
     </div>
   );
 }
