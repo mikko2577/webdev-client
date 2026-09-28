@@ -36,7 +36,7 @@ export default function AnchorTag() {
       <a id="wd-your-link" href="https://www.google.com/" target="_blank" rel="noreferrer">Hi Googler</a>
       <br />
       <h4>my GitHub</h4>
-      <a id="wd-your-link" href="https://github.com/mikko2577/" target="_blank" rel="noreferrer">Hi Professor</a>
+      <a id="wd-your-github" href="https://github.com/mikko2577/" target="_blank" rel="noreferrer">Hi Professor</a>
       <br />
       <h4>Absolute URL (reference docs)</h4>
       <a

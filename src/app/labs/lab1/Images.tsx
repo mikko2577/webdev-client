@@ -20,7 +20,7 @@ export default function Images() {
         alt="Tesla Bot (Optimus) humanoid robot"
       />
       <img
-        id="wd-your-images"
+        id="wd-your-image"
         src="/images/bunny.jpg"
         height="320px"
         alt="bunny bot if load faild"
