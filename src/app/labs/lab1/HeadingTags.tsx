@@ -14,10 +14,10 @@ export default function HeadingTags() {
       h6. Tag h1 is the largest heading and h6 is the smallest heading. A{" "}
       <span id="wd-inline-span">span</span> sits in this sentence without
       starting a new line.
-      <div id="wd-Jiachan-heading">
+      <div id="wd-your-heading">
         <h4>Jiachan Li</h4>
         I came to the United State since 2024 spring, and I like the life style here.
-        I want to become an <span id="wd-jiachan-heanding"> software engineer </span> in after I graduate.
+        I want to become an <span id="wd-your-span"> software engineer </span> in after I graduate.
       </div>
       <div>
         <h1></h1>
