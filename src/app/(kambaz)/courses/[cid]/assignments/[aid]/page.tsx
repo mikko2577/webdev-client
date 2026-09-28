@@ -21,7 +21,7 @@ export default function AssignmentEditor() {
           </tr>
           {/* Complete on your own — see checklist below */}
           <tr>
-          <lable htmlFor="wd-group">Assignment group</lable>
+          <label htmlFor="wd-group">Assignment group</label>
           <select id="wd-group">
             <option>assignments</option>
             <option>quizzes</option>
@@ -30,7 +30,7 @@ export default function AssignmentEditor() {
           </select>
           </tr>
           <tr>
-          <lable htmlFor="wd-grade">display grade as</lable>
+          <label htmlFor="wd-grade">display grade as</label>
           <select id="wd-grade">
             <option>persentage</option>
             <option>letter</option>
