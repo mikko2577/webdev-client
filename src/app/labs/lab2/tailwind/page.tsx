@@ -1,15 +1,15 @@
 import "./index.css";
 import TailwindSpacing from "./TailwindSpacing";
 import TailwindTypography from "./TailwindTypography";
-import TailwindBackgroundColors from "./TailwindBackgroundColors.tsx";
-import TailwindResponsiveBreakpoint from "./TailwindResponsiveBreakpoint.tsx";
-import TailwindResponsiveShowHide from "./TailwindResponsiveShowHide.tsx";
-import TailwindResponsiveFlex from "./TailwindResponsiveFlex.tsx";
-import TailwindResponsiveGrid from "./TailwindResponsiveGrid.tsx";
-import TailwindResponsiveSpacingText from "./TailwindResponsiveSpacingText.tsx";
-import TailwindResponsiveDesign from "./TailwindResponsiveDesign.tsx";
-import TailwindFilters from "./TailwindFilters.tsx";
-import TailwindGrids from "./TailwindGrids.tsx";
+import TailwindBackgroundColors from "./TailwindBackgroundColors";
+import TailwindResponsiveBreakpoint from "./TailwindResponsiveBreakpoint";
+import TailwindResponsiveShowHide from "./TailwindResponsiveShowHide";
+import TailwindResponsiveFlex from "./TailwindResponsiveFlex";
+import TailwindResponsiveGrid from "./TailwindResponsiveGrid";
+import TailwindResponsiveSpacingText from "./TailwindResponsiveSpacingText";
+import TailwindResponsiveDesign from "./TailwindResponsiveDesign";
+import TailwindFilters from "./TailwindFilters";
+import TailwindGrids from "./TailwindGrids";
 
 
 export default function TailwindLab() {
