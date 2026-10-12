@@ -25,8 +25,8 @@ export default function TOC() {
         </Link>
       </li>
       <li>
-        <Link href="/" id="wd-your-link">
-          Jiachan Li
+        <Link href="https://github.com/mikko2577/webdev-client/tree/a2" id="wd-your-link">
+          Github
         </Link>
       </li>
     </ul>
