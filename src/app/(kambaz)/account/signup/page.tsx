@@ -2,30 +2,39 @@ import Link from "next/link";
 
 export default function Signup() {
   return (
-    <div id="wd-signup-screen">
-      <h3>Sign up</h3>
+    <div id="wd-signup-screen"
+      className="max-w-sm"
+    >
+      <h3
+      className="mb-3 text-2xl font-semibold"
+      >Sign up</h3>
       <input
-        placeholder="username"
-        className="wd-username"
-        defaultValue="ada"
-      />
-      <br />
-      <input
-        placeholder="password"
-        type="password"
-        className="wd-password"
-        defaultValue="123"
-      />
-      <br />
-      <input
-        placeholder="verify password"
-        type="password"
-        className="wd-password-verify"
-      />
-      <br />
-      <Link href="/account/profile">Sign up</Link>
-      <br />
-      <Link href="/account/signin">Sign in</Link>
+          placeholder="username"
+          defaultValue="ada"
+          className="wd-username mb-2 w-full rounded border border-neutral-300 px-3 py-2"
+        />
+        <input
+          placeholder="password"
+          type="password"
+          defaultValue="123"
+          className="wd-password mb-2 w-full rounded border border-neutral-300 px-3 py-2"
+        />
+        <input
+          placeholder="password"
+          type="password"
+          defaultValue="123"
+          className="wd-password mb-2 w-full rounded border border-neutral-300 px-3 py-2"
+        />
+      <Link
+          id="wd-signin-btn"
+          href="/dashboard"
+          className="mb-2 block w-full rounded bg-blue-600 px-3 py-2 text-center text-white no-underline"
+        >
+          Sign in
+        </Link>
+        <Link id="wd-signup-link" href="/account/signup">
+          Sign up
+        </Link>
     </div>
   );
 }

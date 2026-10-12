@@ -1,0 +1,4 @@
+/* Theme + utilities without Preflight, for the Labs */
+/*import tailwind的主题和功能*/
+@import "tailwindcss/theme" layer(theme);
+@import "tailwindcss/utilities" layer(utilities);
