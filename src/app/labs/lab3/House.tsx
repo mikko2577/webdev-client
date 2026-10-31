@@ -17,7 +17,7 @@ export default function House(){
 		owners: ["Alice", "Bob"],
 	};
 	console.log(house);
-
+	console.log(house.owners)
 	return (
 		<div id="wd-house">
 			<h4>House</h4>
@@ -27,7 +27,8 @@ export default function House(){
 			{house.bathrooms}
 			<h5>yearBuilt</h5>
 			{house.yearBuilt}
-			
+			<h5>owners</h5>
+			{house.owners.join(", ")}
 			<h5>Number of properties</h5>
 			{Object.keys(house).length}
 			<h5>Data</h5>
