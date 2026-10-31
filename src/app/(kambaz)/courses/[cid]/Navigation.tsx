@@ -1,46 +1,82 @@
 "use client";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import "../../kambaz.css";
 
+const LINKS = [
+  { segment: "home", id: "wd-course-home-link", label: "Home" },
+  { segment: "modules", id: "wd-course-modules-link", label: "Modules" },
+  { segment: "piazza", id: "wd-course-piazza-link", label: "Piazza" },
+  { segment: "zoom", id: "wd-course-zoom-link", label: "Zoom" },
+  { segment: "assignments", id: "wd-course-assignments-link", label: "Assignments" },
+  { segment: "quizzes", id: "wd-course-quizzes-link", label: "Quizzes" },
+  { segment: "grades", id: "wd-course-grades-link", label: "Grades" },
+  { segment: "people/table", id: "wd-course-people-link", label: "People" },
+  { segment: "announcements", id: "wd-course-announcements-link", label: "Announcements" },
+] as const;
+
+
 export default function CourseNavigation({ cid }: { cid: string }) {
   const pathname = usePathname() ?? "";
-  const home = `/courses/${cid}/home`;
-  const modules = `/courses/${cid}/modules`;
-  const piazza = `/courses/${cid}/piazza`;
-  const zoom = `/courses/${cid}/zoom`;
-  const assignments = `/courses/${cid}/assignments`;
-  const quizzes = `/courses/${cid}/quizzes`;
-  const grades = `/courses/${cid}/grades`;
-  const people = `/courses/${cid}/people/table`;
+  const inCourse = pathname.startsWith(`/courses/${cid}`);
+  // const home = `/courses/${cid}/home`;
+  // const modules = `/courses/${cid}/modules`;
+  // const piazza = `/courses/${cid}/piazza`;
+  // const zoom = `/courses/${cid}/zoom`;
+  // const assignments = `/courses/${cid}/assignments`;
+  // const quizzes = `/courses/${cid}/quizzes`;
+  // const grades = `/courses/${cid}/grades`;
+  // const people = `/courses/${cid}/people/table`;
 
   return (
     <div id="wd-courses-navigation" className="wd list-group rounded-none text-lg
       w-[140px]"
 
     >
-      <Link 
+      {LINKS.map(({segment, id, label}) =>
+        {
+          const href = `/courses/${cid}/${segment}`;
+          const active = inCourse ? pathname === href ||
+          (segment !== "home" && pathname.startsWith(href)) : segment === "home";
+          return (
+            <Link
+              key={id}
+              href={href}
+              id={id}
+              className={active
+              ? "list-group-item active border-0"
+              : "list-gourp-item border-0 text-red-600"
+            }
+          >
+            {label}
+          </Link>
+          )
+
+        }
+    )}
+      {/*<Link 
         href={home} 
         id="wd-course-home-link"
         className={
-          /* ===: equal and same type*/
+          /* ===: equal and same type
           pathname === home
-          /*if*/
-          /**/
+          /*if
+          /*
             ? "list-group-item active border-0"
             : "list-group-item border-0 text-red-600"
         }
       >
         Home
-      </Link>
+      </Link>*/}
      
-      <Link href={modules} id="wd-course-modules-link"
+      {/*<Link href={modules} id="wd-course-modules-link"
       className={
-          /* ===: equal and same type*/
+          /* ===: equal and same type
           pathname === modules
-          /*if*/
+          /*if
             ? "list-group-item active border-0"
-            /*else*/
+            /*else
             : "list-group-item border-0 text-red-600"
         }
       >
@@ -50,9 +86,9 @@ export default function CourseNavigation({ cid }: { cid: string }) {
      
       <Link href={piazza} id="wd-course-piazza-link"
       className={
-          /* ===: equal and same type*/
+          /* ===: equal and same type
           pathname === piazza
-          /*if*/
+          /*if
             ? "list-group-item active border-0"
             : "list-group-item border-0 text-red-600"
         }
@@ -62,9 +98,9 @@ export default function CourseNavigation({ cid }: { cid: string }) {
       
       <Link href={zoom} id="wd-course-zoom-link"
       className={
-          /* ===: equal and same type*/
+          /* ===: equal and same type
           pathname === zoom
-          /*if*/
+          /*if
             ? "list-group-item active border-0"
             : "list-group-item border-0 text-red-600"
         }
@@ -74,9 +110,9 @@ export default function CourseNavigation({ cid }: { cid: string }) {
       
       <Link href={assignments} id="wd-course-assignments-link"
       className={
-          /* ===: equal and same type*/
+          /* ===: equal and same type
           pathname === assignments || pathname.startsWith(assignments+"/")
-          /*if*/
+          /*if
             ? "list-group-item active border-0"
             : "list-group-item border-0 text-red-600"
         }
@@ -86,9 +122,9 @@ export default function CourseNavigation({ cid }: { cid: string }) {
       
       <Link href={quizzes} id="wd-course-quizzes-link"
       className={
-          /* ===: equal and same type*/
+          /* ===: equal and same type
           pathname === quizzes
-          /*if*/
+          /*if
             ? "list-group-item active border-0"
             : "list-group-item border-0 text-red-600"
         }
@@ -98,9 +134,9 @@ export default function CourseNavigation({ cid }: { cid: string }) {
       
       <Link href={grades} id="wd-course-grades-link"
       className={
-          /* ===: equal and same type*/
+          /* ===: equal and same type
           pathname === grades
-          /*if*/
+          /*if
             ? "list-group-item active border-0"
             : "list-group-item border-0 text-red-600"
         }
@@ -110,9 +146,9 @@ export default function CourseNavigation({ cid }: { cid: string }) {
       
       <Link href={people} id="wd-course-people-link"
       className={
-          /* ===: equal and same type*/
+          /* ===: equal and same type
           pathname === people
-          /*if*/
+          /*if
             ? "list-group-item active border-0"
             : "list-group-item border-0 text-red-600"
         }
@@ -122,15 +158,15 @@ export default function CourseNavigation({ cid }: { cid: string }) {
 
       <Link href={home} id="wd-course-ai-link"
       className={
-          /* ===: equal and same type*/
+          /* ===: equal and same type
           pathname === home
-          /*if*/
+          /*if
             ? "list-group-item active border-0"
             : "list-group-item border-0 text-red-600"
         }
       >
         Sample
-      </Link>
+      </Link>*/}
 
     </div>
   );

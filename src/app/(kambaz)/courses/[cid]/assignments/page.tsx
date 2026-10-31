@@ -1,5 +1,6 @@
 import { FaPlus, FaSearch } from "react-icons/fa";
 import AssignmentItem from "./AssignmentItem";
+import * as db from "../../../database";
 
 export default async function Assignments({
   params,
@@ -7,6 +8,9 @@ export default async function Assignments({
   params: Promise<{ cid: string }>;
 }) {
   const { cid } = await params;
+  const assignments = db.assignments.filter(
+    (a) => (a.course === cid)
+  )
   return (
     <div id="wd-assignments">
       {/* search input, + Group, + Assignment */}
@@ -37,8 +41,19 @@ export default async function Assignments({
         <FaPlus />
       </button>
     </h3>
-      <ul id="wd-assignment-list" className="m-0 list-none p-0">
-        {/* at least three AssignmentItems using cid */}
+     <ul id="wd-assignment-list" className="m-0 list-none p-0">
+        {assignments.map((assignment) => (
+          <AssignmentItem
+            key={assignment._id}
+            cid={cid}
+            aid={assignment._id}
+            title={assignment.title}
+            details={`Multiple Modules | Not available until ${assignment.available} | Due ${assignment.due} | ${assignment.points} pts`}
+          />
+        ))}
+      </ul>
+      {/*<ul id="wd-assignment-list" className="m-0 list-none p-0">
+        {/* at least three AssignmentItems using cid *
         <AssignmentItem 
           cid={cid} 
           aid="a1" 
@@ -75,7 +90,8 @@ export default async function Assignments({
           details="Multiple Modules | Not available until May 6 at 12:00am |
           Due september 30 at 11:59 100pts">
         </AssignmentItem>
-      </ul>
+      </ul>*/}
+    
     </div>
   </div>
   );

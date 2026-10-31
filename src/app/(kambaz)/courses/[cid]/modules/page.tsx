@@ -1,7 +1,16 @@
+"use client";
+
+import { useParams } from "next/navigation";
 import Module from "./Module";
 import Lesson from "./Lesson";
+import * as db from "../../../database";
+// import * as db from "../../../database";
+
 
 export default function Modules() {
+  const {cid} = useParams();
+  const modules = db.modules.filter((modules) => modules.course === cid);
+  //http://localhost:3000/courses/RS102/modules -> cid is RS102
   return (
     <div className="mb-3 flex flex-wrap items-center gap-2">
       <button
@@ -29,6 +38,23 @@ export default function Modules() {
         + Module
       </button>
       <ul id="wd-modules"  className="m-0 list-none p-0">
+        {
+          modules.map(
+            (m)=>
+            (<Module key={m._id} title={m.name} > 
+              {m.lessons?.map(
+                (l)=>(
+                  <Lesson key={l._id} title={l.name} />
+                )
+              )
+              }
+              </Module>
+              )
+          )
+        }
+        </ul>
+      {/*
+      <ul id="wd-modules"  className="m-0 list-none p-0">
         <Module title="Week 1, Lecture 1 - Course Introduction, Syllabus, Agenda">
           <Lesson title="LEARNING OBJECTIVES">
             <li className="wd-content-item">Introduction to the course</li>
@@ -42,7 +68,7 @@ export default function Modules() {
               Full Stack Developer - Chapter 2 - Creating User Interfaces
             </li>
           </Lesson>
-          {/*function call*/}
+          {/*function call*
           <Lesson title="SLIDES">
             <li className="wd-content-item">Introduction to Web Development</li>
             <li className="wd-content-item">
@@ -50,7 +76,7 @@ export default function Modules() {
             </li>
             <li className="wd-content-item">Creating a React Application</li>
           </Lesson>
-          {/*capital means mine, lower case means build in*/}
+          {/*capital means mine, lower case means build in*
           <Lesson title="My Lesson">
             <li className="wd-content-item">Build in function parameters
             </li>
@@ -59,14 +85,14 @@ export default function Modules() {
            
           </Lesson>
         </Module>
-        <Module title="Week 2">{/* Expand lessons on your own */}</Module>
+        <Module title="Week 2">{/* Expand lessons on your own *</Module>
         <Module title="Week 3" />
         <Module title="Sample module (AI)">
           <Lesson title="Sample lesson (AI)">
             <li className="wd-content-item">Sample content item</li>
           </Lesson>
         </Module>
-      </ul>
+      </ul>*/}
     </div>
   );
 }

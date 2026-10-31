@@ -1,6 +1,8 @@
 import CourseCard from "./CourseCard";
+import * as db from "../database";
 
 export default function Dashboard() {
+  const courses = db.courses;
   return (
     <div id="wd-dashboard">
       <h1 id="wd-dashboard-title">Dashboard</h1> <hr />
@@ -10,7 +12,10 @@ export default function Dashboard() {
       <div id="wd-dashboard-courses" 
         className="grid grid-cols-1 gap-8 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4"
       >
-        <CourseCard
+        {courses.map(
+          (a)=>(<CourseCard key={a._id} course={a}/>)
+        )}
+        {/*<CourseCard
           id="1234"
           title="CS1234 React JS"
           subtitle="Full Stack software developer"
@@ -39,7 +44,7 @@ export default function Dashboard() {
           title="CS9999 Sample Course"
           subtitle="Assistant-generated sample — not my course"
           image="/images/reactjs.jpg"
-        />
+        />*/}
       </div>
     </div>
   );
